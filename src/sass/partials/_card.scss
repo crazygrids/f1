@@ -1,0 +1,23 @@
+.card{
+	@include cover;
+	max-width: 290px;
+	margin: 10px auto;
+	&.card--lg{
+		min-height: 268px;
+		@include media-min($screen-sm){
+			min-height: 328px;
+		}
+		@include media-min($screen-md){
+			min-height: 348px;
+		}
+	}
+	&.card--sm{
+		min-height: 268px;
+		@include media-min($screen-sm){
+			min-height: 288px;
+		}
+		@include media-min($screen-md){
+			min-height: 308px;
+		}
+	}
+}

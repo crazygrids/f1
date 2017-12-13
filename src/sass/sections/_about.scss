@@ -1,0 +1,12 @@
+.about-section{
+	@extend .hero-section;
+	padding-bottom: 220px;
+	padding-top: 240px;
+	.primary-pic{
+		max-width: 176px;
+		height: auto;
+		display: block;
+		margin: 20px auto;
+	
+	}
+}

@@ -1,0 +1,17 @@
+.social-media{
+	padding: 0;
+	text-align: center;
+	li{
+		list-style: none;
+		display: inline-block;
+		margin: 5px 8px;
+		a{
+			color: $text-color;
+			font-size: 30px;
+			@include transition(all, .2s);
+		}
+		&:hover > a{
+			color: $primary-color;
+		}
+	}
+}

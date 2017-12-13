@@ -7,10 +7,19 @@
 @import "base/typography";
 @import "base/global";
 
-// LAYOUT
-@import "partials/header";
+// PARTIALS
 @import "partials/nav";
 @import "partials/sections";
-@import "partials/footer";
 @import "partials/buttons";
 @import "partials/forms";
+@import "partials/skew";
+@import "partials/card";
+@import "partials/social_media";
+
+//SECTIONS
+@import "sections/header";
+@import "sections/hero";
+@import "sections/portfolio";
+@import "sections/about";
+@import "sections/contact";
+@import "sections/footer";
