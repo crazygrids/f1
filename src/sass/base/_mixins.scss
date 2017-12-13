@@ -1,0 +1,194 @@
+// MEDIA QUERIES
+// parameter example: $screen-xs-min
+@mixin media-min($min) {
+	@media (min-width: #{$min}) {
+		@content;
+	}
+}
+
+// parameter example: $screen-xs-min, $screen-xs-max
+@mixin media-between($min, $max) {
+	@media (min-width: #{$min}) and (max-width: #{$max}) {
+		@content;
+	}
+}
+
+// parameter example: $screen-xs
+@mixin media-max($max) {
+	@media (max-width: #{$max}) {
+		@content;
+	}
+}
+
+
+/* -----------------------------------------------------------------------------
+    Mixin Helper
+----------------------------------------------------------------------------- */
+
+/* transition */
+@mixin transition( $attr, $secs ) {
+	-webkit-transition: $attr $secs ease;
+	-moz-transition: $attr $secs ease;
+	-o-transition: $attr $secs ease;
+	transition: $attr $secs ease;
+}
+
+/* transition */
+@mixin transitions( $param ) {
+	-webkit-transition: #{$param};
+	-moz-transition: #{$param};
+	-o-transition: #{$param};
+	transition: #{$param};
+}
+
+@mixin transition-delay( $secs ) {
+	-webkit-transition-delay: #{$secs};
+	-moz-transition-delay: #{$secs};
+	-o-transition-delay: #{$secs};
+	transition-delay: #{$secs};
+}
+
+
+@mixin transform( $rotate ) {
+	-ms-transform: $rotate; /* IE 9 */
+	-webkit-transform: $rotate; /* Chrome, Safari, Opera */
+	transform: $rotate;
+}
+
+/* border radius */
+@mixin border-radius( $radius ) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+
+/* vertical align */
+@mixin vertical-align($position: relative) {
+	position: $position;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+/* vertical align & centered */
+@mixin vertical-align-centered($position: absolute) {
+	position: $position;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+/* placeholder */
+@mixin placeholder( $color ) {
+	&::-webkit-input-placeholder {
+		color: $color;
+	}
+	&:-moz-placeholder {
+		/* Firefox 18- */
+		color: $color;
+	}
+	&::-moz-placeholder {
+		/* Firefox 19+ */
+		color: $color;
+	}
+	&:-ms-input-placeholder {
+		color: $color;
+	}
+}
+
+@mixin appearance( $ap ) {
+    -webkit-appearance: $ap;
+    -moz-appearance: $ap;
+    appearance: $ap;
+}
+
+// image replace
+@mixin img-replace($imageURL) {
+	background: url($imageURL) no-repeat;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+/* text none */
+@mixin textnone {
+	line-height: 0;
+	font-size: 0;
+	color: transparent;
+}
+
+/* fullscreen background */
+@mixin fsBG( $bg ) {
+	background: url($bg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+/* fullscreen cover */
+@mixin cover {
+	background-position: center center;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+/* background size */
+@mixin background-size( $size ) {
+	-webkit-background-size: $size;
+	-moz-background-size: $size;
+	-o-background-size: $size;
+	background-size: $size;
+}
+
+/* box shadow */
+@mixin box-shadow( $bs ) {
+	-webkit-box-shadow: $bs;
+	-moz-box-shadow: $bs;
+	box-shadow: $bs;
+}
+
+/* clearfix*/
+@mixin clearfix {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+	*zoom: 1;
+}
+
+/* gradient generator */
+@mixin linearGradient($top, $bottom , $deg, $ldeg , $topper: 0%,$bottper: 100% ){
+	background: $top;
+	background: -moz-linear-gradient($deg,  $top $topper, $bottom  $bottper);
+	background: -webkit-linear-gradient($deg,  $top $topper,$bottom  $bottper);
+	background: linear-gradient( $ldeg, $top $topper,$bottom  $bottper );
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$top', endColorstr='$bottom',GradientType=1 );
+}
+
+/* action */
+@mixin action {
+	&:hover,&:active,&:focus {
+		@content;
+	}
+}
+
+/* Disable Text Select */
+
+@mixin noTextSelect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; 
+}

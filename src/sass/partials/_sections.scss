@@ -1,0 +1,127 @@
+.container-fluid {
+    max-width: 1920px;
+    margin: auto;
+}
+.hero-section, .about-section{
+	@include cover;
+    min-height: 540px;
+    padding-top: 40px;
+	position: relative;
+	@include media-min($screen-sm){
+		min-height: 590px;
+	}
+	&:before{
+		background-color: $white;
+		opacity: .9;
+		content: "";
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		display: block;
+	}
+	h1 {
+		text-transform: capital;
+		> span{
+			color: $primary-color;
+			display: block;
+		} 	
+	}
+
+}
+.hero-section .img--profile{
+	@include media-min($screen-sm){
+		min-width: 490px;
+		height: auto;
+	}
+}
+.about-section{
+	padding-bottom: 220px;
+	padding-top: 240px;
+}
+.social-media{
+	padding: 0;
+	text-align: center;
+	li{
+		list-style: none;
+		display: inline-block;
+		margin: 5px 8px;
+		a{
+			color: $text-color;
+			font-size: 30px;
+			@include transition(all, .2s);
+		}
+		&:hover > a{
+			color: $primary-color;
+		}
+	}
+}
+.primary-pic{
+	max-width: 176px;
+	height: auto;
+	display: block;
+	margin: 20px auto;
+
+}
+.portfolio-section{
+	min-height: 600px;
+	padding-bottom: 110px;
+}
+.card{
+	@include cover;
+	max-width: 290px;
+	margin: 10px auto;
+	&.card--lg{
+		min-height: 268px;
+		@include media-min($screen-sm){
+			min-height: 328px;
+		}
+		@include media-min($screen-md){
+			min-height: 348px;
+		}
+	}
+	&.card--sm{
+		min-height: 268px;
+		@include media-min($screen-sm){
+			min-height: 288px;
+		}
+		@include media-min($screen-md){
+			min-height: 308px;
+		}
+	}
+}
+.skew--bg{
+	position: relative;
+	.skew--top{
+		width: 100%;
+		height: 200px;
+		position: absolute;
+		top: -100px;
+		left: 0;
+		transform: skewY(-5deg);
+	}
+	.skew--bottom{
+		width: 100%;
+		height: 120px;
+		position: absolute;
+		bottom: -50px;
+		left: 0;
+		transform: skewY(5deg);
+		z-index: 1;
+		@include media-min($screen-md){
+		    height: 165px;
+		    bottom: -83px;
+		}
+	}
+}
+.copy-right{
+	padding: 20px 10px;
+	font-size: 12px;
+	color: $white;
+	p{
+		margin-bottom: 0;
+	}
+}

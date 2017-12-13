@@ -1,0 +1,28 @@
+html, body{
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+}
+.align-center{
+	text-align: center;
+}
+.align-left{
+	text-align: left;
+}
+.align-right{
+	text-align: right;
+}
+.no-gutter{
+	padding: 0;
+}
+.theme-color{
+	background-color: $primary-color;
+}
+.theme-color2{
+	background-color: $secondary-color;
+}
+.main-wrap{
+	position: relative;
+	z-index: 1;
+	@include transition(all, 2s);
+}

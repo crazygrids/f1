@@ -1,0 +1,107 @@
+.toggle{
+	position: fixed;
+	font-size: 40px;
+	right: 30px;
+	top: 46px;
+	width: 60px;
+    height: 56px;
+	z-index: 3;
+	cursor: pointer;
+	@include media-min($screen-sm){
+		right: 100px;
+	}
+}
+.toggle-icon{
+	position: fixed;
+	font-size: 40px;
+	right: 30px;
+	top: 46px;
+	z-index: 2;
+	background: rgba(225, 225, 225, 0.8);
+	padding: 0 10px;
+	font-weight: bold;
+	@include transition(all, .2s);
+	@include media-min($screen-sm){
+		right: 100px;
+	}
+	&:after{
+		content: "☰";
+	}
+}
+
+input.toggler[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+	position: absolute;
+}
+input.toggler[type=checkbox]:checked ~ .main-wrap{
+	position: relative;
+    left: -300px;
+}
+input.toggler[type=checkbox]:checked ~ .toggle-icon {
+	transform: rotate(-90deg);
+	&:after{
+		content: "✕";
+	}
+}
+.menu {
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    background-color: $white;
+    padding-top: 140px;
+    text-align: center;
+    ul{
+    	li{
+    		list-style: none;
+    		margin-bottom: 10px;
+    		padding: 0;
+    		a{
+    			color: $text-color;
+    			text-decoration: none;
+    			font-size: 18px;
+    			display: block;
+    			height: 40px;
+    			padding: 8px;
+    			position: relative;
+    			overflow: hidden;
+    			&:after{
+    				width: 50%;
+    				overflow: hidden;
+    				height: 100%;
+    				content: "";
+    				background-color: $text-color;
+    				top: -100%;
+    				left: 0;
+    				z-index: -1;
+    				position: absolute;
+    				@include transition(all, .2s);
+    			}
+    			&:before{
+    				width: 50%;
+    				height: 100%;
+    				content: "";
+    				background-color: $primary-color;
+    				bottom: -100%;
+    				right: 0;
+    				z-index: -1;
+    				position: absolute;
+    				@include transition(all, .2s);
+    			}
+    		}
+    		&:hover{
+    			a{
+    				color: $white;
+    			}
+    			> a:after{
+    				top: 0;
+    			}
+    			> a:before{
+    				bottom: 0;
+    			}
+    		}
+    	}
+    }
+}

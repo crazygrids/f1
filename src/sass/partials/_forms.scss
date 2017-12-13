@@ -1,0 +1,10 @@
+form{
+	padding-top: 46px;
+	.form-group{
+		margin-bottom: 26px;
+		.form-control{
+			@include border-radius(0);
+		}		
+	}
+
+}
